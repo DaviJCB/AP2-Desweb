@@ -127,18 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('nascimento', artigo.dataset.nascimento);
         sessionStorage.setItem('dados', JSON.stringify(artigo.dataset));
 
-        console.log(acha_cookie('id'));
-        console.log(localStorage.getItem('nome_completo'));
-        console.log(JSON.parse(sessionStorage.getItem('dados')));
-
         window.location = `outra.html?id=${artigo.dataset.id}`;
-    }
-
-    function acha_cookie(chave) {
-        const lista_de_cookies = document.cookie.split("; ");
-        const procurado = lista_de_cookies.find(
-            (e) => e.startsWith(chave));
-        return procurado.split('=')[1];
     }
 
     async function pega_json(caminho) {
@@ -146,4 +135,4 @@ document.addEventListener('DOMContentLoaded', () => {
         const dados = await resposta.json();
         return dados;
     }
-});
+}); 

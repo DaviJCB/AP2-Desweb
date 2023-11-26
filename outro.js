@@ -18,13 +18,18 @@ async function fetchData() {
     console.log(infos);
     carreg.style.visibility = 'hidden';
 
+
     const img = document.getElementById('imagem').src = infos.imagem;
     const descricao= document.getElementById('descricao').innerHTML = infos.descricao;
     const mome = document.getElementById('nome').innerHTML = infos.nome;
+    const Altura = document.getElementById('Altura').innerHTML = "Altura: " + infos.altura;
+    const Posicao= document.getElementById('Pos').innerHTML = "Posição: " + infos.posicao;
+    const Nascimento = document.getElementById('Nasc').innerHTML ="Nascimento: " + infos.nascimento;
   
-
+  
   } catch (error) {
-    console.error(error);
+    console.error(error); 
+    window.alert("Erro!");
   }
 }
 
